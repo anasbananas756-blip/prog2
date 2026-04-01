@@ -138,7 +138,7 @@ def main():
     stop = pc()
     print(f"Ex4: Sequential time of {d} and {n}: {stop-start}")
     print("What is parallel time?")
-    rint(f'Average volume by parallelized computation: {sphere_volume_parallel2(n,d)}')
+    print(f'Average volume by parallelized computation: {sphere_volume_parallel2(n,d)}')
     
     
 
