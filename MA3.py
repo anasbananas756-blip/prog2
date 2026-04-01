@@ -134,9 +134,10 @@ def main():
     n = 1000000
     d = 11
     start = pc()
-    sphere_volume(n,d)
+    V = sphere_volume(n,d)
     stop = pc()
     print(f"Ex4: Sequential time of {d} and {n}: {stop-start}")
+    print(f'Approximated volume: {V}')
     print("What is parallel time?")
     print(f'Average volume by parallelized computation: {sphere_volume_parallel2(n,d)}')
     
