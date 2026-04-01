@@ -139,7 +139,7 @@ def main():
     print(f"Ex4: Sequential time of {d} and {n}: {stop-start}")
     print(f'Approximated volume: {V}')
     print("What is parallel time?")
-    print(f'Average volume by parallelized computation: {sphere_volume_parallel2(n,d)}')
+    print(f'Approximated volume by parallelized computation with data splitting: {sphere_volume_parallel2(n,d)}')
     
     
 
