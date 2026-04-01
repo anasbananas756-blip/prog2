@@ -92,7 +92,7 @@ def sphere_volume_parallel2(n,d,np=10):
     #np is the number of processes
     start = pc()
     with future.ProcessPoolExecutor() as vol:
-        results = vol.map(sphere_volume, [n/np]*np, [d]*np)
+        results = vol.map(sphere_volume, [n//np]*np, [d]*np)
     end = pc()
     print(f'Parallell processes splitting data using pool executor took {end-start} seconds')
     return sum(results)
