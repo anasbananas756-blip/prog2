@@ -90,8 +90,12 @@ def sphere_volume_parallel2(n,d,np=10):
     #n is the number of points
     # d is the number of dimensions of the sphere
     #np is the number of processes
-
-     return 
+    start = pc()
+    with future.ProcessPoolExecutor() as vol:
+        results =. vol.map(sphere_volume, [n/np]*np, [d]*np)
+    end = pc()
+    print(f'Parallell processes splitting data using pool executor took {end-start} seconds')
+    return sum(results)
     
 def main():
     #Ex1
@@ -122,7 +126,9 @@ def main():
     print(f'Average volume: {V/10}')
     print("What is parallel time?")
     print(f'Average volume by parallelized computation: {sphere_volume_parallel1(n,d)}')
-
+    '''
+    Running the code on the arrhenius linux server, parallel code runs almost 5 times faster
+    '''
 
     #Ex4
     n = 1000000
@@ -132,7 +138,7 @@ def main():
     stop = pc()
     print(f"Ex4: Sequential time of {d} and {n}: {stop-start}")
     print("What is parallel time?")
-
+    rint(f'Average volume by parallelized computation: {sphere_volume_parallel2(n,d)}')
     
     
 
